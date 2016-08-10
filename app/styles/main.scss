@@ -8,7 +8,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 580px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -43,3 +43,26 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+/*
+ * My styles
+ */
+
+ #hero {
+  height: 100vh;
+  background: url('../images/background2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: #fff;
+    margin: 0;
+  }
+
+  button {
+    margin: 0 auto;
+  }
+ }

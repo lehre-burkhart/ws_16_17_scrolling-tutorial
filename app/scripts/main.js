@@ -21,9 +21,10 @@
 (function($){
   $(function(){
 
+    // Init parallax
     $('.parallax').parallax();
-    var s = skrollr.init();
+        var s = skrollr.init();
 
-  }); // end of document ready
+    }); 
 })(jQuery); // end of jQuery name space
 
