@@ -1,36 +1,19 @@
+/*************************** Default styles ***************************/
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Baloo Tamma', cursive;
+}
 
 p {
+  font-size: 1.6rem;
   line-height: 2rem;
 }
 
-.button-collapse {
-  color: #26a69a;
-}
-
-.parallax-container {
-  min-height: 580px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
+h2 {
+  font-size: 2.8rem;
 }
 
 .icon-block {
@@ -44,25 +27,93 @@ footer.page-footer {
   margin: 0;
 }
 
-/*
- * My styles
- */
+/************** Mixins *************************/
 
- #hero {
+/**
+ * Das Hero Mixin ist ein Bild, dass über die ganze
+ * Höhe des Bildschirms geht. In der Mitte des Hero
+ * ist ein Text.
+ */
+@mixin hero($color) {
   height: 100vh;
-  background: url('../images/background2.jpg') no-repeat center center fixed;
+  background-color: $color;
   background-size: cover;
-  
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
-  h1 {
+  h1, p {
     color: #fff;
     margin: 0;
   }
 
-  button {
-    margin: 0 auto;
-  }
+}
+
+
+/************** Styles ****************************/
+
+/*
+ * Hero element
+ */
+ #hero {
+  @include hero(#454544);
  }
+
+/**
+ * Parallax Scroller sind Elemente, die ein Bild im Hintergrund
+ * haben und sich mit dem Parallax Effekt Scrollen lassen.
+ */
+.parallax-container {
+  min-height: 80vh;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+
+  .section {
+    width: 100%;
+  }
+
+  @media only screen and (max-width : 992px) {
+    .section {
+      position: absolute;
+      top: 40%;
+    }
+  }
+}
+
+/**
+ * Container
+ * Einfaches Element mit einer Überschrift und einem
+ * Text.
+ */
+.container-simple {
+  p {
+    line-height: 150%;
+  }
+}
+
+/**
+ * Text Image element
+ */
+.text-image-element {
+  min-height: 50vh;
+
+  .image {
+    background-image: url('../images/phone.jpg');
+    min-height: 600px;
+    margin-top: 30px;
+    background-size: 35%;
+    background-position: 60% 0px;
+    background-repeat: no-repeat;
+  }
+
+  .row {
+    margin-bottom: 0px;
+  }
+
+  .instruction {
+    box-sizing: border-box;
+    margin-left: 40px;
+  }
+}
